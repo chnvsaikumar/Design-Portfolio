@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sai Kumar – Design & Digital Studio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f1efea;--bg2:#e6e3dc;--ink:#15131a;--mut:#5d5a66;--bd:rgba(21,19,26,.16);--a:#2336ff;--b:#ff5fa2;--c:#d7ff3f;--on:#fff;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0d12;--bg2:#17151d;--ink:#f3f1ee;--mut:#a29fae;--bd:rgba(243,241,238,.18);--a:#5b6bff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0d12;--bg2:#17151d;--ink:#f3f1ee;--mut:#a29fae;--bd:rgba(243,241,238,.18);--a:#5b6bff;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Instrument Sans",system-ui,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0;line-height:.98;letter-spacing:-.035em;font-weight:800}
+a{color:inherit}:focus-visible{outline:3px solid var(--a);outline-offset:3px}
+.w{max-width:1240px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+.nav .w{display:flex;align-items:center;gap:22px;height:64px}
+.logo{font:800 22px "Bricolage Grotesque";letter-spacing:-.03em;text-decoration:none;margin-right:auto}.logo s{text-decoration:none;color:var(--b)}
+.nav nav{display:flex;gap:22px}.nav nav a{text-decoration:none;font-weight:500;font-size:15px;color:var(--mut)}.nav nav a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:13px 24px;border-radius:99px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);transition:background .2s,color .2s,transform .2s}
+.btn:hover{transform:translateY(-2px)}.btn.p{background:var(--a);border-color:var(--a);color:#fff}.btn.k{background:var(--ink);color:var(--bg)}.btn.wa{background:#16a34a;border-color:#16a34a;color:#fff}
+/* hero */
+.hero{padding:56px 0 40px}
+.hero h1{font-size:clamp(52px,11.5vw,168px);letter-spacing:-.05em;line-height:.88}
+.hero h1 span{display:block;animation:up .9s cubic-bezier(.2,.8,.2,1) both}.hero h1 span:nth-child(2){animation-delay:.12s;padding-left:clamp(0px,9vw,140px)}.hero h1 span:nth-child(3){animation-delay:.24s}
+@keyframes up{from{opacity:0;transform:translateY(40px)}}
+.hero h1 em{font-style:normal;color:var(--a)}.hero h1 u{text-decoration:none;display:inline-block;background:var(--b);color:var(--ink);padding:0 .14em;border-radius:.14em;transform:rotate(-2.5deg)}
+.hrow{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;margin-top:44px;align-items:end}
+.hrow p{margin:0 0 22px;color:var(--mut);font-size:19px;max-width:44ch}.btns{display:flex;gap:12px;flex-wrap:wrap}
+.tiles{height:clamp(240px,32vw,400px)}.tiles .fr{height:100%}
+.fr{position:relative;overflow:hidden;border-radius:18px;background:var(--bg2);border:1.5px dashed var(--bd)}
+.fr .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--mut);font-size:13px;font-weight:600;text-align:center;padding:10px}
+.fr .ph svg{width:26px;height:26px}
+.fr img,.fr video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.fr:has(img:not([hidden])),.fr:has(video:not([hidden])){border-style:solid;border-color:transparent}
+.t1{background:color-mix(in srgb,var(--a) 20%,var(--bg2))}
+/* marquee */
+.mq{background:var(--a);color:#fff;overflow:hidden;padding:18px 0;transform:rotate(-1.2deg);margin:36px -10px}
+.mq div{display:flex;gap:34px;width:max-content;animation:m 36s linear infinite;font:800 clamp(26px,4vw,44px) "Bricolage Grotesque";letter-spacing:-.03em;white-space:nowrap}
+.mq i{font-style:normal;color:var(--c)}@keyframes m{to{transform:translateX(-50%)}}
+section{padding:92px 0}
+h2.t{font-size:clamp(40px,6.4vw,92px);margin-bottom:18px;max-width:14ch}
+.lead{color:var(--mut);max-width:56ch;margin:0 0 44px;font-size:18px}
+/* services index */
+.idx{border-top:1.5px solid var(--ink)}
+.row{width:100%;text-align:left;background:none;border:0;font:inherit;color:inherit;cursor:pointer;display:grid;grid-template-columns:70px 1fr 1.1fr 40px;gap:18px;align-items:center;padding:20px 6px;transition:background .25s,padding .25s}
+.row:hover{background:var(--c);color:#15131a;padding-left:18px}.row:hover .sd,.row:hover .n{color:#15131a}
+.row .n{font:600 14px "Instrument Sans";color:var(--mut)}.row .hh{font:800 clamp(24px,3.4vw,42px)/1 "Bricolage Grotesque";letter-spacing:-.035em}.row .sd{color:var(--mut);font-size:15.5px}
+.row svg{width:26px;height:26px;transition:transform .25s}.row:hover svg{transform:rotate(45deg)}
+.sv{border-bottom:1px solid var(--bd)}.sv.open .row{background:var(--c);color:#15131a}.sv.open .row .sd,.sv.open .row .n{color:#15131a}.sv.open .row svg{transform:rotate(135deg)}
+.dsc{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.8,.2,1)}.sv.open .dsc{grid-template-rows:1fr}.dsc>div{overflow:hidden}
+.di{display:grid;grid-template-columns:1.2fr 1fr;gap:34px;padding:26px 6px 34px 88px}.di p{margin:0 0 20px;font-size:18px;max-width:52ch}.di h4{margin:0 0 12px;font:800 15px "Bricolage Grotesque"}
+.di ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}.di li{border:1.5px solid var(--bd);border-radius:99px;padding:6px 14px;font-size:14.5px;font-weight:500}
+#pg{position:fixed;top:0;left:0;height:3px;width:0;background:var(--a);z-index:70}
+.mb{display:none;font:600 14.5px "Instrument Sans";padding:10px 16px;border-radius:99px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.nav nav a.on{color:var(--ink);font-weight:600}
+.it .cnt{position:absolute;left:12px;bottom:12px;z-index:2;background:var(--bg);color:var(--ink);font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px}
+.it .vw{position:absolute;right:12px;bottom:12px;z-index:2;background:var(--c);color:#15131a;font-size:13px;font-weight:700;padding:6px 14px;border-radius:99px;opacity:0;transform:translateY(6px);transition:.25s}.it:hover .vw{opacity:1;transform:none}
+/* work */
+.alt{background:var(--bg2)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.chips button{font:600 14.5px "Instrument Sans";padding:9px 18px;border-radius:99px;border:1.5px solid var(--bd);background:transparent;color:var(--ink);cursor:pointer}
+.chips button small{opacity:.6;font-size:12px;margin-left:2px}.chips button.on,.chips button:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.work{columns:3 300px;column-gap:16px}
+.it{break-inside:avoid;margin-bottom:16px;cursor:zoom-in;display:block}
+.it .fr{aspect-ratio:var(--r,4/5)}.it:hover img,.it:hover video{transform:scale(1.05)}
+.it .cap{display:flex;justify-content:space-between;gap:10px;padding:10px 4px 0;font-weight:600;font-size:15px}.it .cap span{color:var(--mut);font-weight:500}
+.it .play{position:absolute;right:12px;top:12px;z-index:2;background:var(--ink);color:var(--bg);font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px}
+.hide{display:none}
+.note{font-size:13.5px;color:var(--mut);margin-top:22px}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,9,14,.92);display:none;align-items:center;justify-content:center;padding:24px}
+.lb.on{display:flex}.lb img,.lb video{max-width:100%;max-height:84vh;border-radius:12px}.lb .x,.nv{position:absolute;background:rgba(255,255,255,.16);color:#fff;border:0;border-radius:50%;width:46px;height:46px;font-size:24px;cursor:pointer;line-height:1}.lb .x:hover,.nv:hover{background:var(--a)}
+.lb .x{top:calc(14px + env(safe-area-inset-top,0px));right:18px}.nv{display:none;top:50%;margin-top:-23px}.lb.multi .nv{display:block}.nv.l{left:14px}.nv.r{right:14px}
+.lb img,.lb video{max-height:68vh}#lbs{position:absolute;bottom:calc(58px + env(safe-area-inset-bottom,0px));left:0;right:0;display:flex;gap:8px;justify-content:center;padding:0 16px;overflow-x:auto}
+#lbs button{width:54px;height:54px;border-radius:8px;border:2px solid transparent;background:#333;color:#fff;font-size:14px;cursor:pointer;padding:0;overflow:hidden;flex:none;opacity:.6}#lbs button.on{border-color:var(--c);opacity:1}#lbs img{width:100%;height:100%;max-height:none;object-fit:cover;border-radius:0}
+.lb p{position:absolute;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;color:#fff;margin:0}
+/* process + stats */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1.5px solid var(--ink)}
+.st{padding:24px 22px 8px 0}.st+.st{padding-left:22px;border-left:1px solid var(--bd)}
+.st b{font:800 15px "Bricolage Grotesque";color:var(--a)}.st h3{font-size:30px;margin:10px 0}.st p{margin:0;color:var(--mut);font-size:15.5px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:70px}
+.stats div{border-radius:22px;padding:26px;background:var(--bg2)}.stats div:nth-child(1){background:var(--a);color:#fff}.stats div:nth-child(2){background:var(--b);color:#15131a}.stats div:nth-child(3){background:var(--c);color:#15131a}
+.stats b{display:block;font:800 clamp(44px,6vw,80px)/1 "Bricolage Grotesque";letter-spacing:-.05em}.stats span{font-weight:500;font-size:15px}
+/* about */
+.ab{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.ab .fr{aspect-ratio:4/5;border-radius:200px 200px 22px 22px}
+.ab p{color:var(--mut);margin:0 0 18px;max-width:54ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.tags span{border:1.5px solid var(--bd);border-radius:99px;padding:6px 14px;font-weight:500;font-size:14.5px}
+/* faq */
+details{border-top:1px solid var(--bd)}details:last-of-type{border-bottom:1px solid var(--bd)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;padding:22px 0;font:800 clamp(20px,2.4vw,28px) "Bricolage Grotesque";letter-spacing:-.02em}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--a);transition:transform .25s}details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0;padding:0 0 22px;color:var(--mut);max-width:60ch}
+/* contact */
+.cta{background:var(--ink);color:var(--bg);border-radius:36px;padding:clamp(40px,8vw,96px) clamp(24px,5vw,64px);margin:0 0 70px;position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:var(--b);right:-120px;top:-160px;opacity:.9}
+.cta>*{position:relative;z-index:1}.cta h2{font-size:clamp(46px,9vw,130px);letter-spacing:-.05em;max-width:11ch}.cta h2 em{font-style:normal;color:var(--c)}
+.cta p{color:color-mix(in srgb,var(--bg) 70%,transparent);max-width:46ch;margin:22px 0 30px;font-size:19px}
+.cta .btn{border-color:var(--bg);color:var(--bg)}.cta .btn.p{background:var(--c);border-color:var(--c);color:#15131a}.cta .btn.wa{color:#fff;border-color:#16a34a}
+.ci{margin-top:26px;font-weight:500;font-size:15px;opacity:.8;display:flex;gap:8px 28px;flex-wrap:wrap}
+footer{border-top:1px solid var(--bd);padding:28px 0 36px;color:var(--mut);font-size:14.5px}footer .w{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:860px){.nav nav{display:none}.hrow,.ab{grid-template-columns:1fr}.row{grid-template-columns:34px 1fr 28px}.row .sd{display:none}.steps,.stats{grid-template-columns:1fr 1fr}.st:nth-child(3){padding-left:0;border-left:0}section{padding:64px 0}.mb{display:block}.nav nav.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:14px;background:var(--bg);padding:16px 24px 22px;border-bottom:1px solid var(--bd)}.di{grid-template-columns:1fr;padding-left:6px}.nav .btn.k{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="pg"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-9 9"/></symbol>
+<symbol id="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+</defs></svg>
+
+<header class="nav"><div class="w"><a class="logo" href="#top">Sai Kumar<s>.</s></a>
+<nav id="nv"><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#about">About</a><a href="#faq">FAQ</a></nav>
+<button class="mb" id="mb" aria-expanded="false" aria-controls="nv">Menu</button><a class="btn k" href="#contact">Start a project</a></div></header>
+
+<main id="top">
+<div class="hero"><div class="w">
+<h1><span>Design that</span><span>makes <u>brands</u></span><span><em>sell & stick.</em></span></h1>
+<div class="hrow">
+<div><p>An independent design and digital studio for packaging, branding, websites and marketing. 5+ years helping brands look sharp and sell online.</p>
+<div class="btns"><a class="btn p" href="https://wa.me/919492360482?text=Hi%20Sai%2C%20I%20have%20a%20design%20project." target="_blank" rel="noopener">Chat on WhatsApp</a><a class="btn" href="#work">View my work</a></div></div>
+<div class="tiles">
+<div class="fr t1"><div class="ph"><svg><use href="#img"/></svg>Hero image</div><img src="hero-1.jpg" alt="Featured design work" onerror="this.remove()"></div>
+</div></div></div></div>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="services"><div class="w">
+<h2 class="t">Everything a brand needs to show up.</h2>
+<p class="lead">Ten services, one studio. Tap a service to read what it covers and what you get.</p>
+<div class="idx" id="idx"></div>
+</div></section>
+
+<section id="work" class="alt"><div class="w">
+<h2 class="t">Selected work</h2>
+<p class="lead">Pick a category to see all its images and videos right here. Tap any piece to view it large.</p>
+<div class="chips" id="chips"></div>
+<div class="work" id="work-grid"></div>
+<p class="note">To add more work: put files in the same folder and add file names to the WORKS list at the bottom of this file. Every file appears as its own tile under its category.</p>
+</div></section>
+
+<section id="process"><div class="w">
+<h2 class="t">How a project runs</h2>
+<p class="lead">Simple steps, clear updates, no surprises.</p>
+<div class="steps">
+<div class="st"><b>1</b><h3>Brief</h3><p>You share your goal, audience and any references.</p></div>
+<div class="st"><b>2</b><h3>Concept</h3><p>I sketch directions and show you the strongest ones.</p></div>
+<div class="st"><b>3</b><h3>Craft</h3><p>We refine the chosen direction into final files.</p></div>
+<div class="st"><b>4</b><h3>Launch</h3><p>You receive print, web and social-ready formats.</p></div>
+</div>
+<div class="stats">
+<div><b>5+</b><span>years in design and digital marketing</span></div>
+<div><b>10</b><span>services under one roof</span></div>
+<div><b>100+</b><span>projects delivered (edit to your number)</span></div>
+<div><b>1</b><span>person you talk to, start to finish</span></div>
+</div></div></section>
+
+<section id="about" class="alt"><div class="w ab">
+<div class="fr"><div class="ph"><svg><use href="#img"/></svg>Your portrait</div><img src="pp.jpg" alt="Sai Kumar" onerror="this.remove()"></div>
+<div><h2 class="t" style="max-width:12ch">Hi, I’m Sai.</h2>
+<p>I’m a designer and digital marketer with more than five years of experience across packaging, branding, e-commerce and video. I like work that looks good and also does a job: gets clicked, gets bought, gets remembered.</p>
+<p>I also run retail planning and e-commerce projects, so I understand how a design performs on a shelf and on a screen.</p>
+<div class="tags"><span>Photoshop</span><span>Illustrator</span><span>Premiere Pro</span><span>Shopify</span><span>SEO</span><span>Meta & Google Ads</span></div></div>
+</div></section>
+
+<section id="faq"><div class="w" style="max-width:860px">
+<h2 class="t">Good to know</h2><p class="lead"></p>
+<details open><summary>What do you need to get started?</summary><p>A short message with what you want to make, who it is for, and any logos, photos or examples you like. I reply with a plan and price.</p></details>
+<details><summary>Can you handle design and marketing together?</summary><p>Yes. I can design your packaging, build your Shopify store, shoot product photos, and run email, SEO and ads, all in one workflow.</p></details>
+<details><summary>What files will I receive?</summary><p>Print-ready PDFs, editable source files, and web or social exports, depending on the project.</p></details>
+<details><summary>How long does a project take?</summary><p>A logo or social media set usually takes a few days. A full brand, packaging range or website takes a few weeks. I confirm the timeline before we start.</p></details>
+</div></section>
+
+<section id="contact" style="padding-top:0"><div class="w"><div class="cta">
+<h2>Let’s make something <em>loud.</em></h2>
+<p>Tell me about your brand and what you need. I’ll reply with a clear next step.</p>
+<div class="btns"><a class="btn wa" href="https://wa.me/919492360482?text=Hi%20Sai%2C%20I%20have%20a%20design%20project." target="_blank" rel="noopener">WhatsApp me</a><a class="btn p" href="mailto:saichalagundla@gmail.com?subject=Design%20project%20enquiry">Email me</a><a class="btn" href="tel:+919492360482">Call</a></div>
+<div class="ci"><span>+91 94923 60482</span><span>saichalagundla@gmail.com</span></div>
+</div></div></section>
+</main>
+<footer><div class="w"><span>© Sai Kumar. All rights reserved.</span><span>Design & digital studio, India</span></div></footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project gallery"><button class="x" aria-label="Close">×</button><button class="nv l" aria-label="Previous">‹</button><button class="nv r" aria-label="Next">›</button><div id="lbc"></div><div id="lbs"></div><p id="lbt"></p></div>
+
+<script>
+var SERV=[
+["Packaging design","Boxes, labels and pouches that stand out on shelf and look great unboxed.","I design packaging that works on the shelf, in a delivery box and in a photo. Every project starts with your product, your buyer and your print method, so the final files go to the printer without surprises.",["Box and pouch design","Labels and stickers","Dielines and mockups","Print-ready files"]],
+["E-commerce","Product pages, banners and listings built to turn visitors into buyers.","Marketplaces and online stores are won by clear images and clear information. I design listings, A+ content and banners that explain the product quickly and match your brand.",["Listing images","A+ and brand content","Banners and offers","Marketplace creatives"]],
+["Email marketing","Campaigns and flows that get opened, read and clicked.","I design and set up emails that look consistent with your brand and are easy to read on a phone. That includes the layout, the copy direction and the automation behind it.",["Newsletter templates","Welcome and cart flows","Promo campaigns","Mailchimp, Klaviyo and similar"]],
+["Digital marketing","Social creatives and paid ads that bring the right customers.","I plan and create content for Instagram, Facebook and Google, then run and review the ads. You get a steady posting look and clear numbers on what is working.",["Social media creatives","Meta and Google ads","Content calendar","Monthly performance notes"]],
+["Branding","Logos, colours, type and guidelines that make you recognisable.","A brand is more than a logo. I build the full identity: the mark, colours, fonts, tone and the rules for using them, so everything you publish feels like one business.",["Logo and variations","Colour and type system","Brand guidelines","Stationery and social kit"]],
+["Website design","Clean, fast, mobile-first sites that explain what you do.","I design and build websites that load quickly, work on every screen and make it easy for visitors to contact or buy. The layout is planned around what you want people to do.",["Page design","Mobile-first build","Contact and WhatsApp links","Basic on-page SEO"]],
+["SEO","Better rankings so customers find you without paying for every click.","I review your site, fix technical issues and improve titles, content and structure so search engines understand it. Progress is tracked in plain reports.",["Site audit","Keyword research","On-page fixes","Search and traffic reports"]],
+["Product photography","Crisp studio and lifestyle shots that show products at their best.","Clean, well-lit photos lift both sales and trust. I shoot, retouch and size images for your store, marketplaces and social media.",["White background shots","Lifestyle and flat lays","Retouching and clipping","Web and print sizes"]],
+["Video editing","Reels, ads and brand films cut for rhythm and impact.","I edit raw footage into short, watchable videos with sound, titles and motion that match your brand. Formats are prepared for each platform.",["Reels and shorts","Ad videos","Product videos","Titles, captions and sound"]],
+["Shopify","Store setup, theme customisation and launch support.","I set up your Shopify store from scratch or improve an existing one: theme, products, payments, shipping and the pages that build trust. You get a store you can manage yourself.",["Store setup","Theme customisation","Product uploads","Launch checklist"]]];
+/* ===== YOUR WORKS: edit this list =====
+   [title, category, [files], shape]
+   Put as many files as you like in the [files] list: each file becomes its own tile under that category.
+   Use .mp4 for videos. shape: "4/5" portrait, "1/1" square, "16/9" wide, "9/16" tall.
+   Example: ["Tea box set","Packaging",["work-1.jpg","work-1b.jpg","work-1c.mp4"],"4/5"] */
+var WORKS=[
+["Tea brand box set","Packaging",["work-1.jpg","work-1b.jpg","work-1c.jpg"],"4/5"],
+["Festival reel","Video",["work-2.mp4"],"9/16"],
+["Studio brand identity","Branding",["work-3.jpg","work-3b.jpg","work-3c.jpg","work-3d.jpg"],"1/1"],
+["Fashion store website","Web & Shopify",["work-4.jpg","work-4b.jpg"],"16/9"],
+["Skincare product shoot","Photography",["work-5.jpg","work-5b.jpg","work-5c.jpg"],"4/5"],
+["Monsoon sale emailer","Marketing",["work-6.jpg"],"1/1"],
+["Festive offer banners","Marketing",["work-7.jpg","work-7b.jpg"],"4/5"],
+["Snack pouch range","Packaging",["work-8.jpg","work-8b.jpg"],"1/1"],
+["Product launch ad","Video",["work-9.mp4"],"16/9"],
+["Logo suite","Branding",["work-10.jpg","work-10b.jpg"],"4/5"],
+["Shopify store build","Web & Shopify",["work-11.jpg","work-11b.jpg"],"1/1"],
+["Social media campaign","Marketing",["work-12.jpg","work-12b.jpg","work-12c.jpg"],"4/5"]];
+var I='<svg><use href="#img"/></svg>';
+/* marquee + services */
+var m=SERV.map(function(s){return s[0]+' <i>✦</i>'}).join(' ');document.getElementById('mq').innerHTML='<span>'+m+'</span><span>'+m+'</span>';
+var ix=document.getElementById('idx');
+ix.innerHTML=SERV.map(function(s,i){return '<div class="sv"><button class="row" aria-expanded="false" aria-controls="d'+i+'"><span class="n">'+(i<9?'0':'')+(i+1)+'</span><span class="hh">'+s[0]+'</span><span class="sd">'+s[1]+'</span><svg><use href="#ar"/></svg></button><div class="dsc" id="d'+i+'" inert><div><div class="di"><div><p>'+s[2]+'</p><a class="btn p" href="https://wa.me/919492360482?text='+encodeURIComponent('Hi Sai, I need help with '+s[0]+'.')+'" target="_blank" rel="noopener">Discuss this service</a></div><div><h4>What you get</h4><ul>'+s[3].map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div></div></div></div></div>'}).join('');
+function tg(sv,o){sv.classList.toggle('open',o);sv.querySelector('.row').setAttribute('aria-expanded',o);var d=sv.querySelector('.dsc');o?d.removeAttribute('inert'):d.setAttribute('inert','')}
+ix.onclick=function(e){var b=e.target.closest('.row');if(!b)return;var sv=b.parentNode,o=!sv.classList.contains('open');[].forEach.call(ix.children,function(x){tg(x,false)});tg(sv,o)};
+tg(ix.children[0],true);
+/* work grid: every file is its own tile, grouped by category */
+function isV(f){return /\.(mp4|webm|mov)$/i.test(f||'')}
+function med(f,a,full){return isV(f)?'<video src="'+f+'" '+(full?'controls autoplay playsinline':'muted loop playsinline preload="metadata"')+' onerror="this.remove()"></video>':'<img src="'+f+'" alt="'+a+'"'+(full?'':' loading="lazy"')+' onerror="this.remove()">'}
+var g=document.getElementById('work-grid'),cats=['All'],ITEMS=[],cat='All';
+WORKS.forEach(function(w){if(cats.indexOf(w[1])<0)cats.push(w[1]);w[2].forEach(function(f,k){ITEMS.push({t:w[0]+(w[2].length>1?' '+(k+1):''),c:w[1],f:f,r:w[3]})})});
+g.innerHTML=ITEMS.map(function(it,i){return '<a class="it" href="#work" data-i="'+i+'" data-c="'+it.c+'"><div class="fr" style="--r:'+it.r+'">'+(isV(it.f)?'<span class="play">VIDEO</span>':'')+'<span class="vw">View ↗</span><div class="ph">'+I+(isV(it.f)?'Video space':'Image space')+'</div>'+(it.f?med(it.f,it.t):'')+'</div><div class="cap">'+it.t+'<span>'+it.c+'</span></div></a>'}).join('');
+var ch=document.getElementById('chips');
+function cnt(c){return ITEMS.filter(function(x){return c==='All'||x.c===c}).length}
+ch.innerHTML=cats.map(function(c,i){return '<button data-c="'+c+'"'+(i?'':' class="on"')+'>'+c+' <small>'+cnt(c)+'</small></button>'}).join('');
+ch.onclick=function(e){var b=e.target.closest('button');if(!b)return;cat=b.dataset.c;[].forEach.call(ch.children,function(x){x.classList.toggle('on',x===b)});
+[].forEach.call(g.children,function(it){it.classList.toggle('hide',cat!=='All'&&it.dataset.c!==cat)})};
+g.addEventListener('mouseover',function(e){var v=e.target.closest('.it');v=v&&v.querySelector('video');if(v)v.play().catch(function(){})});
+g.addEventListener('mouseout',function(e){var v=e.target.closest('.it');v=v&&v.querySelector('video');if(v)v.pause()});
+/* viewer: browses whatever category is showing */
+var lb=document.getElementById('lb'),lc=document.getElementById('lbc'),lt=document.getElementById('lbt'),ls=document.getElementById('lbs'),L=[],gi=0;
+function show(){var it=L[gi];lc.innerHTML=med(it.f,it.t,1);lt.textContent=it.t+' · '+it.c+' ('+(gi+1)+' of '+L.length+')';ls.innerHTML='';lb.classList.toggle('multi',L.length>1)}
+function step(d){gi=(gi+d+L.length)%L.length;show()}
+function cl(){lb.classList.remove('on');lc.innerHTML=''}
+g.onclick=function(e){var a=e.target.closest('.it');if(!a)return;e.preventDefault();var it=ITEMS[+a.dataset.i];if(!it.f)return;L=ITEMS.filter(function(x){return x.f&&(cat==='All'||x.c===cat)});gi=L.indexOf(it);show();lb.classList.add('on');lb.querySelector('.x').focus()};
+lb.onclick=function(e){var t=e.target;if(t===lb||t.closest('.x'))cl();else if(t.closest('.nv.l'))step(-1);else if(t.closest('.nv.r'))step(1)};
+addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')cl();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
+var tx=0;lb.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-tx;if(L.length>1&&Math.abs(d)>50)step(d<0?1:-1)});
+/* menu, progress, active link */
+var mb=document.getElementById('mb'),nv=document.getElementById('nv');
+mb.onclick=function(){var o=nv.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.textContent=o?'Close':'Menu'};
+nv.onclick=function(e){if(e.target.tagName==='A'){nv.classList.remove('open');mb.textContent='Menu';mb.setAttribute('aria-expanded','false')}};
+var pg=document.getElementById('pg');addEventListener('scroll',function(){var h=document.documentElement;pg.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+var nl=[].slice.call(nv.querySelectorAll('a'));
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)nl.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-40% 0px -55% 0px'});
+nl.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)so.observe(t)});
+</script>
+</body>
+</html>
